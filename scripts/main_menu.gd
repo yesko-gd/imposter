@@ -18,6 +18,8 @@ func play() -> void:
 	home_group.hide()
 	game_settings_group.show()
 
+	Global.imposter_hint = false
+
 func _start() -> void:
 	if not time_limit_set:
 		return
@@ -53,7 +55,7 @@ func _start() -> void:
 	var word_index: int = randi() % words.size()
 
 	Global.word = words[word_index]
-	Global.hint = hints[word_index]
+	Global.hint = hints[word_index] if Global.imposter_hint else ""
 
 	Manager.swap(Global.pre_game_scene)
 

@@ -1,4 +1,4 @@
-class_name __GlobalClass
+class_name __GlobalClass__
 extends Node
 
 const main_menu_scene: PackedScene = preload("res://scenes/main_menu.tscn")
