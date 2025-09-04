@@ -1,0 +1,39 @@
+; Engine configuration file.
+; It's best edited using the editor UI and not directly,
+; since the parameters that go here are not all obvious.
+;
+; Format:
+;   [section] ; section goes between []
+;   param=value ; assign values to parameters
+
+config_version=5
+
+[application]
+
+config/name="Imposter"
+run/main_scene="uid://bs8l0ktkbyeae"
+config/features=PackedStringArray("4.5")
+
+[autoload]
+
+Global="*res://scripts/global.gd"
+Manager="*res://scripts/manager.gd"
+
+[display]
+
+window/size/viewport_width=500
+window/size/viewport_height=1000
+window/handheld/orientation=1
+
+[file_customization]
+
+folder_colors={
+"res://data/": "green",
+"res://resources/": "red",
+"res://scenes/": "blue",
+"res://scripts/": "yellow"
+}
+
+[rendering]
+
+textures/vram_compression/import_etc2_astc=true

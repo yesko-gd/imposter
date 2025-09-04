@@ -1,0 +1,10 @@
+[gd_scene format=3 uid="uid://dms05j6tha060"]
+
+[node name="LineEdit" type="LineEdit"]
+size_flags_horizontal = 3
+context_menu_enabled = false
+emoji_menu_enabled = false
+shortcut_keys_enabled = false
+middle_mouse_paste_enabled = false
+drag_and_drop_selection_enabled = false
+select_all_on_focus = true

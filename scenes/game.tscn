@@ -1,0 +1,133 @@
+[gd_scene load_steps=3 format=3 uid="uid://cueew4m7gcs3d"]
+
+[ext_resource type="PackedScene" uid="uid://ubigynob4eqe" path="res://scenes/background.tscn" id="1_uwrxv"]
+[ext_resource type="Script" uid="uid://d2tdmumimp3ev" path="res://scripts/game.gd" id="1_yqjtg"]
+
+[node name="Game" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_yqjtg")
+
+[node name="Background" parent="." instance=ExtResource("1_uwrxv")]
+layout_mode = 1
+
+[node name="GameUI" type="MarginContainer" parent="."]
+unique_name_in_owner = true
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/margin_left = 10
+theme_override_constants/margin_top = 10
+theme_override_constants/margin_right = 10
+theme_override_constants/margin_bottom = 10
+
+[node name="VBoxContainer" type="VBoxContainer" parent="GameUI"]
+layout_mode = 2
+
+[node name="Spacer" type="Control" parent="GameUI/VBoxContainer"]
+layout_mode = 2
+size_flags_vertical = 3
+
+[node name="Timer" type="Label" parent="GameUI/VBoxContainer"]
+unique_name_in_owner = true
+layout_mode = 2
+theme_override_font_sizes/font_size = 40
+horizontal_alignment = 1
+
+[node name="StartingPlayer" type="Label" parent="GameUI/VBoxContainer"]
+unique_name_in_owner = true
+layout_mode = 2
+theme_override_font_sizes/font_size = 24
+horizontal_alignment = 1
+
+[node name="VBoxContainer" type="VBoxContainer" parent="GameUI/VBoxContainer"]
+layout_mode = 2
+size_flags_vertical = 3
+
+[node name="Spacer" type="Control" parent="GameUI/VBoxContainer/VBoxContainer"]
+layout_mode = 2
+size_flags_vertical = 3
+
+[node name="Pause" type="Button" parent="GameUI/VBoxContainer/VBoxContainer"]
+unique_name_in_owner = true
+layout_mode = 2
+theme_override_font_sizes/font_size = 24
+text = "Pause"
+
+[node name="AltPause" type="HBoxContainer" parent="GameUI/VBoxContainer/VBoxContainer"]
+unique_name_in_owner = true
+visible = false
+layout_mode = 2
+
+[node name="RevealImposter" type="Button" parent="GameUI/VBoxContainer/VBoxContainer/AltPause"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_stretch_ratio = 1.5
+theme_override_font_sizes/font_size = 24
+text = "Imposter aufdecken"
+
+[node name="Back" type="Button" parent="GameUI/VBoxContainer/VBoxContainer/AltPause"]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_font_sizes/font_size = 24
+text = "Zurück"
+
+[node name="PostGameUI" type="MarginContainer" parent="."]
+unique_name_in_owner = true
+visible = false
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/margin_left = 10
+theme_override_constants/margin_top = 10
+theme_override_constants/margin_right = 10
+theme_override_constants/margin_bottom = 10
+
+[node name="VBoxContainer" type="VBoxContainer" parent="PostGameUI"]
+layout_mode = 2
+
+[node name="Spacer" type="Control" parent="PostGameUI/VBoxContainer"]
+layout_mode = 2
+size_flags_vertical = 3
+
+[node name="Imposter" type="RichTextLabel" parent="PostGameUI/VBoxContainer"]
+unique_name_in_owner = true
+layout_mode = 2
+theme_override_font_sizes/normal_font_size = 32
+theme_override_font_sizes/bold_font_size = 32
+theme_override_font_sizes/bold_italics_font_size = 32
+theme_override_font_sizes/italics_font_size = 32
+theme_override_font_sizes/mono_font_size = 32
+bbcode_enabled = true
+text = "Die Imposter sind:
+[b]The friends we made along the way[/b]"
+fit_content = true
+horizontal_alignment = 1
+
+[node name="VBoxContainer" type="VBoxContainer" parent="PostGameUI/VBoxContainer"]
+layout_mode = 2
+size_flags_vertical = 3
+
+[node name="Spacer" type="Control" parent="PostGameUI/VBoxContainer/VBoxContainer"]
+layout_mode = 2
+size_flags_vertical = 3
+
+[node name="NewGame" type="Button" parent="PostGameUI/VBoxContainer/VBoxContainer"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 32
+text = "Neues Spiel"
+
+[connection signal="pressed" from="GameUI/VBoxContainer/VBoxContainer/Pause" to="." method="_pause_pressed"]
+[connection signal="pressed" from="GameUI/VBoxContainer/VBoxContainer/AltPause/RevealImposter" to="." method="_reveal_pressed"]
+[connection signal="pressed" from="GameUI/VBoxContainer/VBoxContainer/AltPause/Back" to="." method="_unpause_pressed"]
+[connection signal="pressed" from="PostGameUI/VBoxContainer/VBoxContainer/NewGame" to="." method="_new_game"]

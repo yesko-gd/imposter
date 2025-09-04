@@ -1,0 +1,158 @@
+[gd_scene load_steps=6 format=3 uid="uid://bs8l0ktkbyeae"]
+
+[ext_resource type="Script" uid="uid://vq0tnn3akfom" path="res://scripts/main_menu.gd" id="1_wu84c"]
+[ext_resource type="PackedScene" uid="uid://d0ncbl451yll" path="res://scenes/game_settings_label.tscn" id="2_8ln24"]
+[ext_resource type="PackedScene" uid="uid://ubigynob4eqe" path="res://scenes/background.tscn" id="2_rtw2f"]
+[ext_resource type="PackedScene" uid="uid://dms05j6tha060" path="res://scenes/game_settings_line_edit.tscn" id="3_rtw2f"]
+[ext_resource type="PackedScene" uid="uid://q8wgb0e7rwv1" path="res://scenes/game_settings_checkbox.tscn" id="4_oa1go"]
+
+[node name="MainMenu" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_wu84c")
+
+[node name="Background" parent="." instance=ExtResource("2_rtw2f")]
+layout_mode = 1
+
+[node name="MarginContainer" type="MarginContainer" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/margin_left = 10
+theme_override_constants/margin_top = 10
+theme_override_constants/margin_right = 10
+theme_override_constants/margin_bottom = 10
+
+[node name="Home" type="CenterContainer" parent="MarginContainer"]
+unique_name_in_owner = true
+layout_mode = 2
+
+[node name="VBoxContainer" type="VBoxContainer" parent="MarginContainer/Home"]
+layout_mode = 2
+
+[node name="AspectRatioContainer" type="AspectRatioContainer" parent="MarginContainer/Home/VBoxContainer"]
+layout_mode = 2
+ratio = 4.0
+stretch_mode = 1
+
+[node name="Play" type="Button" parent="MarginContainer/Home/VBoxContainer/AspectRatioContainer"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 40
+text = "Spielen"
+
+[node name="GameSettings" type="Panel" parent="MarginContainer"]
+unique_name_in_owner = true
+visible = false
+layout_mode = 2
+
+[node name="MarginContainer" type="MarginContainer" parent="MarginContainer/GameSettings"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/margin_left = 10
+theme_override_constants/margin_top = 10
+theme_override_constants/margin_right = 10
+theme_override_constants/margin_bottom = 10
+
+[node name="VBoxContainer" type="VBoxContainer" parent="MarginContainer/GameSettings/MarginContainer"]
+layout_mode = 2
+
+[node name="Players" type="Panel" parent="MarginContainer/GameSettings/MarginContainer/VBoxContainer"]
+layout_mode = 2
+size_flags_vertical = 3
+
+[node name="MarginContainer" type="MarginContainer" parent="MarginContainer/GameSettings/MarginContainer/VBoxContainer/Players"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/margin_left = 10
+theme_override_constants/margin_top = 10
+theme_override_constants/margin_right = 10
+theme_override_constants/margin_bottom = 10
+
+[node name="VBoxContainer" type="VBoxContainer" parent="MarginContainer/GameSettings/MarginContainer/VBoxContainer/Players/MarginContainer"]
+layout_mode = 2
+
+[node name="PlayersLabel" type="Label" parent="MarginContainer/GameSettings/MarginContainer/VBoxContainer/Players/MarginContainer/VBoxContainer"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 30
+text = "Spieler"
+
+[node name="Panel" type="Panel" parent="MarginContainer/GameSettings/MarginContainer/VBoxContainer/Players/MarginContainer/VBoxContainer"]
+layout_mode = 2
+size_flags_vertical = 3
+
+[node name="ScrollContainer" type="ScrollContainer" parent="MarginContainer/GameSettings/MarginContainer/VBoxContainer/Players/MarginContainer/VBoxContainer/Panel"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_vertical = 3
+
+[node name="PlayerParent" type="VBoxContainer" parent="MarginContainer/GameSettings/MarginContainer/VBoxContainer/Players/MarginContainer/VBoxContainer/Panel/ScrollContainer"]
+unique_name_in_owner = true
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+
+[node name="AddPlayer" type="Button" parent="MarginContainer/GameSettings/MarginContainer/VBoxContainer/Players/MarginContainer/VBoxContainer"]
+layout_mode = 2
+text = "Spieler hinzufügen"
+
+[node name="TimeLimit" type="HBoxContainer" parent="MarginContainer/GameSettings/MarginContainer/VBoxContainer"]
+layout_mode = 2
+
+[node name="Label" parent="MarginContainer/GameSettings/MarginContainer/VBoxContainer/TimeLimit" instance=ExtResource("2_8ln24")]
+layout_mode = 2
+text = "Zeitbegrenzung (min)"
+
+[node name="LineEdit" parent="MarginContainer/GameSettings/MarginContainer/VBoxContainer/TimeLimit" instance=ExtResource("3_rtw2f")]
+layout_mode = 2
+virtual_keyboard_type = 2
+
+[node name="ImposterCount" type="HBoxContainer" parent="MarginContainer/GameSettings/MarginContainer/VBoxContainer"]
+layout_mode = 2
+
+[node name="Label" parent="MarginContainer/GameSettings/MarginContainer/VBoxContainer/ImposterCount" instance=ExtResource("2_8ln24")]
+layout_mode = 2
+text = "Imposter-Zahl"
+
+[node name="LineEdit" parent="MarginContainer/GameSettings/MarginContainer/VBoxContainer/ImposterCount" instance=ExtResource("3_rtw2f")]
+layout_mode = 2
+
+[node name="Hint" type="HBoxContainer" parent="MarginContainer/GameSettings/MarginContainer/VBoxContainer"]
+layout_mode = 2
+
+[node name="Label" parent="MarginContainer/GameSettings/MarginContainer/VBoxContainer/Hint" instance=ExtResource("2_8ln24")]
+layout_mode = 2
+text = "Hinweiswort für Imposter"
+
+[node name="CenterContainer" parent="MarginContainer/GameSettings/MarginContainer/VBoxContainer/Hint" instance=ExtResource("4_oa1go")]
+layout_mode = 2
+
+[node name="Start" type="Button" parent="MarginContainer/GameSettings/MarginContainer/VBoxContainer"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 30
+text = "Start"
+
+[connection signal="pressed" from="MarginContainer/Home/VBoxContainer/AspectRatioContainer/Play" to="." method="play"]
+[connection signal="pressed" from="MarginContainer/GameSettings/MarginContainer/VBoxContainer/Players/MarginContainer/VBoxContainer/AddPlayer" to="." method="add_player"]
+[connection signal="text_changed" from="MarginContainer/GameSettings/MarginContainer/VBoxContainer/TimeLimit/LineEdit" to="." method="_set_time_limit"]
+[connection signal="text_changed" from="MarginContainer/GameSettings/MarginContainer/VBoxContainer/ImposterCount/LineEdit" to="." method="_set_imposter_count"]
+[connection signal="toggled" from="MarginContainer/GameSettings/MarginContainer/VBoxContainer/Hint/CenterContainer" to="." method="_set_imposter_hint"]
+[connection signal="pressed" from="MarginContainer/GameSettings/MarginContainer/VBoxContainer/Start" to="." method="_start"]

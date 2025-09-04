@@ -1,0 +1,50 @@
+[gd_scene load_steps=4 format=3 uid="uid://dc1hcltqj83px"]
+
+[ext_resource type="Script" uid="uid://rqot5xmjpmn" path="res://scripts/pre_game.gd" id="1_fwt8j"]
+[ext_resource type="PackedScene" uid="uid://s68xwiuxe5p2" path="res://scenes/player_info.tscn" id="2_rqpqi"]
+[ext_resource type="PackedScene" uid="uid://ubigynob4eqe" path="res://scenes/background.tscn" id="2_ucl24"]
+
+[node name="PreGame" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_fwt8j")
+
+[node name="Background" parent="." instance=ExtResource("2_ucl24")]
+layout_mode = 1
+
+[node name="HBoxContainer" type="HBoxContainer" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Spacer" type="Control" parent="HBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="VBoxContainer" type="VBoxContainer" parent="HBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_stretch_ratio = 3.0
+
+[node name="Spacer" type="Control" parent="HBoxContainer/VBoxContainer"]
+layout_mode = 2
+size_flags_vertical = 3
+
+[node name="PlayerInfo" parent="HBoxContainer/VBoxContainer" instance=ExtResource("2_rqpqi")]
+unique_name_in_owner = true
+layout_mode = 2
+
+[node name="Spacer2" type="Control" parent="HBoxContainer/VBoxContainer"]
+layout_mode = 2
+size_flags_vertical = 3
+
+[node name="Spacer2" type="Control" parent="HBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
