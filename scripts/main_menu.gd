@@ -43,6 +43,8 @@ func _start() -> void:
 
 		imposters.push_back(new_imposter)
 
+	Global.imposters = imposters
+
 	var words: Array[String] = []
 	words.assign(Manager.constants("words"))
 	var hints: Array[String] = []

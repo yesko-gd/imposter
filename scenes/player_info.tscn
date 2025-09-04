@@ -37,6 +37,31 @@ texture = ExtResource("2_yl0j5")
 expand_mode = 5
 stretch_mode = 5
 
+[node name="VBoxContainer" type="VBoxContainer" parent="MarginContainer/Content/TextureRect"]
+layout_mode = 1
+anchors_preset = 14
+anchor_top = 0.5
+anchor_right = 1.0
+anchor_bottom = 0.5
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Roll" type="Label" parent="MarginContainer/Content/TextureRect/VBoxContainer"]
+unique_name_in_owner = true
+layout_mode = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 32
+text = "This is a bug :/"
+horizontal_alignment = 1
+
+[node name="Word" type="Label" parent="MarginContainer/Content/TextureRect/VBoxContainer"]
+unique_name_in_owner = true
+layout_mode = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 24
+text = "This is a bug :/"
+horizontal_alignment = 1
+
 [node name="Reveal" type="Button" parent="MarginContainer/Content"]
 layout_mode = 2
 theme_override_font_sizes/font_size = 24
