@@ -34,4 +34,4 @@ Wenn der Timer abgelaufen ist, müssen die Spieler abstimmen.
 
 Das Spiel wird in Godot gemacht, d.h. um es zu spielen kann man es einfach in den [Godot Editor](https://godotengine.org/download/) importieren.
 
-Releases sind leider noch nicht verfügbar und das Spiel ist noch ein Prototyp.
+Releases sind leider noch nicht verfügbar und das Spiel ist noch ein Prototyp. Deshalb gibt es auch im Moment nur ein einziges Wort; um es zu spielen müsste man seine eigenen hinzufügen.
