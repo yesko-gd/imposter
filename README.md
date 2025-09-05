@@ -1,55 +1,37 @@
-VIM bindings for Godot 4
+# Spiel
 
-recently improved thanks to wenqiangwang
-If you would like ctrl+F to be move-forward by page then uncomment the following line
+Ein Imposter-Spiel, stark inspiriert vom Spiel "Finde den Imposter" bei **Splash - Party Spiele**.
 
-#"Ctrl+F": 1, ## Uncomment if you want Ctrl+F for move forward by page
+## Regeln:
 
-### Supported Mode
+**Disclaimer: Ich verwende der Einfachheit das generische Maskulinum; jedes männliche Pronomen/Nomen umfasst *alle* Geschlechter.**
 
-    - Normal mode
-    - Insert mode
-    - Visual mode
-    - Visual line mode
+### Ziel
 
-### Supported motions
+Es gibt **Unschuldige** und **Imposter**; diese Rollen werden zufällig aufgeteilt. In jeder Runde gibt es ein zufälliges Nomen, das jeder Spieler außer den Impostern angezeigt bekommt. Die Imposter müssen herausfinden, was dieses Wort ist, bevor sie von den Unschuldigen erkannt werden.
 
-    h, l, j, k, +, -
-    ^, 0, $, |
-    H, L, M,
-    c-f, c-b, c-d, c-u,
-    G, gg
-    w, W, e, E, b, ge
-    %, f, F, t, T, ;
-    *, #, /, n, N
-    aw, a(, a{, a[, a", a'
-    iw, i(, i{, i[, i", i'
+### Ablauf
 
-### Supported operator
+Sobald der Timer losgeht, sagen alle Spieler (auch die Imposter) reihum jeweils ein Wort, das zum Lösungswort passt. Für alle Unschuldigen gilt: kein Teil des gesagten Wortes darf in der gleichen Wortfamilie sein wie ein Teil des Lösungswortes, oder eine Übersetzung davon sein. Beispiele mit dem Lösungswort "Industriezucker":
 
-    c, C,
-    d, D, x, X,
-    y, Y,
-    u, U, ~
+```
+✔ süß
+✔ Insulin
+✕ sugar
+✕ Industrialisierung
+```
 
-### Supported actions
+### Spielende
 
-    p,
-    u, c-r,
-    c-o, c-i,
-    za, zM, zR,
-    q, @, .,
-    >, <
-    m, '
+Die Spieler können sich jederzeit darauf einigen, abzustimmen, wer der Imposter ist. Dann wird der Timer für die Dauer der Abstimmung pausiert. Der Spieler, für den gestimmt wird, scheidet aus dem Spiel aus.
+Wenn der Timer abgelaufen ist, müssen die Spieler abstimmen.
 
-### Override Default Godot Shortcuts with `godot-vim`'s ones
+**Wenn ein Spieler, unabhängig von seiner Rolle, in seinem Zug ein Wort sagt, das nach den soeben genannten Regeln nicht erlaubt ist, ist das Spiel beendet und die Imposter haben gewonnen**.
 
-Note that all non-ascii character mappings that are already mapped in the default Godot editor have to be unmapped from the Editor settings (Editor >> Editor Settings >> Shorcuts) before being usable with `godot-vim`.
+**Sobald keine Imposter mehr im Spiel sind, haben die Unschuldigen gewonnen. Sobald nur noch Imposter im Spiel sind, haben die Imposter gewonnen.**
 
-This currently goes for:
+# Programm
 
-- `Ctrl+R`
-- `Ctrl+U`
-- `Ctrl+D`
+Das Spiel wird in Godot gemacht, d.h. um es zu spielen kann man es einfach in den [Godot Editor](https://godotengine.org/download/) importieren.
 
-See the full list of non-ascii shortucts that may already be mapped by Godot and thus wouldn't work in `godot-vim` before releasing them in Godot settings: https://github.com/joshnajera/godot-vim/blob/main/addons/godot-vim/godot-vim.gd#L135
+Releases sind leider noch nicht verfügbar und das Spiel ist noch ein Prototyp. Deshalb gibt es auch im Moment nur ein einziges Wort; um es zu spielen müsste man seine eigenen hinzufügen.
