@@ -30,27 +30,8 @@ theme_override_constants/margin_top = 10
 theme_override_constants/margin_right = 10
 theme_override_constants/margin_bottom = 10
 
-[node name="Home" type="CenterContainer" parent="MarginContainer"]
-unique_name_in_owner = true
-layout_mode = 2
-
-[node name="VBoxContainer" type="VBoxContainer" parent="MarginContainer/Home"]
-layout_mode = 2
-
-[node name="AspectRatioContainer" type="AspectRatioContainer" parent="MarginContainer/Home/VBoxContainer"]
-layout_mode = 2
-ratio = 4.0
-stretch_mode = 1
-
-[node name="Play" type="Button" parent="MarginContainer/Home/VBoxContainer/AspectRatioContainer"]
-unique_name_in_owner = true
-layout_mode = 2
-theme_override_font_sizes/font_size = 40
-text = "Spielen"
-
 [node name="GameSettings" type="Panel" parent="MarginContainer"]
 unique_name_in_owner = true
-visible = false
 layout_mode = 2
 
 [node name="MarginContainer" type="MarginContainer" parent="MarginContainer/GameSettings"]
@@ -113,6 +94,7 @@ size_flags_vertical = 3
 
 [node name="AddPlayer" type="Button" parent="MarginContainer/GameSettings/MarginContainer/VBoxContainer/Players/MarginContainer/VBoxContainer"]
 layout_mode = 2
+theme_override_font_sizes/font_size = 24
 text = "Spieler hinzufügen"
 
 [node name="TimeLimit" type="HBoxContainer" parent="MarginContainer/GameSettings/MarginContainer/VBoxContainer"]
@@ -146,17 +128,28 @@ layout_mode = 2
 layout_mode = 2
 text = "Hinweiswort für Imposter"
 
-[node name="CenterContainer" parent="MarginContainer/GameSettings/MarginContainer/VBoxContainer/Hint" instance=ExtResource("4_oa1go")]
+[node name="GameSettingsCheckbox" parent="MarginContainer/GameSettings/MarginContainer/VBoxContainer/Hint" instance=ExtResource("4_oa1go")]
 layout_mode = 2
+
+[node name="ImposterPartners" type="HBoxContainer" parent="MarginContainer/GameSettings/MarginContainer/VBoxContainer"]
+layout_mode = 2
+
+[node name="Label" parent="MarginContainer/GameSettings/MarginContainer/VBoxContainer/ImposterPartners" instance=ExtResource("2_8ln24")]
+layout_mode = 2
+theme_override_colors/font_color = Color(1, 1, 1, 0.5019608)
+text = "Impostern ihre Partner anzeigen"
+
+[node name="GameSettingsCheckbox" parent="MarginContainer/GameSettings/MarginContainer/VBoxContainer/ImposterPartners" instance=ExtResource("4_oa1go")]
+layout_mode = 2
+disabled = true
 
 [node name="Start" type="Button" parent="MarginContainer/GameSettings/MarginContainer/VBoxContainer"]
 layout_mode = 2
 theme_override_font_sizes/font_size = 30
 text = "Start"
 
-[connection signal="pressed" from="MarginContainer/Home/VBoxContainer/AspectRatioContainer/Play" to="." method="play"]
 [connection signal="pressed" from="MarginContainer/GameSettings/MarginContainer/VBoxContainer/Players/MarginContainer/VBoxContainer/AddPlayer" to="." method="add_player"]
 [connection signal="text_changed" from="MarginContainer/GameSettings/MarginContainer/VBoxContainer/TimeLimit/TimeLimit" to="." method="_set_time_limit"]
 [connection signal="text_changed" from="MarginContainer/GameSettings/MarginContainer/VBoxContainer/ImposterCount/ImposterCount" to="." method="_set_imposter_count"]
-[connection signal="toggled" from="MarginContainer/GameSettings/MarginContainer/VBoxContainer/Hint/CenterContainer" to="." method="_set_imposter_hint"]
+[connection signal="toggled" from="MarginContainer/GameSettings/MarginContainer/VBoxContainer/Hint/GameSettingsCheckbox" to="." method="_set_imposter_hint"]
 [connection signal="pressed" from="MarginContainer/GameSettings/MarginContainer/VBoxContainer/Start" to="." method="_start"]

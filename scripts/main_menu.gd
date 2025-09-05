@@ -12,7 +12,6 @@ var _imposter_hint_set: bool = false
 var _time_limit_buffer: String = ""
 var _imposter_count_buffer: String = ""
 
-@onready var _home_group: Control = %Home
 @onready var _game_settings_group: Control = %GameSettings
 
 @onready var _player_parent: Control = %PlayerParent
@@ -21,7 +20,6 @@ var _imposter_count_buffer: String = ""
 @onready var _imposter_count: LineEdit = %ImposterCount
 
 func play() -> void:
-	_home_group.hide()
 	_game_settings_group.show()
 
 	Global.imposter_hint = false

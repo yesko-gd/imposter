@@ -2,7 +2,7 @@
 
 [ext_resource type="Script" uid="uid://bbbn8qeq1e7nx" path="res://scripts/game_settings_checkbox.gd" id="1_fv2jd"]
 
-[node name="CenterContainer" type="CenterContainer"]
+[node name="GameSettingsCheckbox" type="CenterContainer" node_paths=PackedStringArray("check_box")]
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
@@ -11,8 +11,10 @@ grow_vertical = 2
 size_flags_horizontal = 3
 size_flags_vertical = 3
 script = ExtResource("1_fv2jd")
+check_box = NodePath("CheckBox")
 
 [node name="CheckBox" type="CheckBox" parent="."]
+unique_name_in_owner = true
 layout_mode = 2
 size_flags_horizontal = 3
 
