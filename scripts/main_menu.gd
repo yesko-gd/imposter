@@ -3,29 +3,35 @@ extends RootChild
 
 const _game_settings_player_scene: PackedScene = preload("res://scenes/game_settings_player.tscn")
 
-@onready var home_group: Control = %Home
-@onready var game_settings_group: Control = %GameSettings
-
-@onready var player_parent: Control = %PlayerParent
-
 var imposter_count: int = -1
 
-var imposter_count_set: bool = false
-var time_limit_set: bool = false
-var imposter_hint_set: bool = false
+var _imposter_count_set: bool = false
+var _time_limit_set: bool = false
+var _imposter_hint_set: bool = false
+
+var _time_limit_buffer: String = ""
+var _imposter_count_buffer: String = ""
+
+@onready var _home_group: Control = %Home
+@onready var _game_settings_group: Control = %GameSettings
+
+@onready var _player_parent: Control = %PlayerParent
+
+@onready var _time_limit: LineEdit = %TimeLimit
+@onready var _imposter_count: LineEdit = %ImposterCount
 
 func play() -> void:
-	home_group.hide()
-	game_settings_group.show()
+	_home_group.hide()
+	_game_settings_group.show()
 
 	Global.imposter_hint = false
 
 func _start() -> void:
-	if not time_limit_set:
+	if not _time_limit_set:
 		return
-	if not imposter_count_set:
+	if not _imposter_count_set:
 		return
-	#if not imposter_hint_set: 
+	#if not _imposter_hint_set: 
 		#return
 
 	var players: Array[Player] = Global.players
@@ -68,21 +74,29 @@ func add_player(player_name: String = "", add_to_list: bool = true) -> void:
 		player.name_str = player_name
 
 	var game_settings_player: GameSettingsPlayer = _game_settings_player_scene.instantiate()
-	player_parent.add_child(game_settings_player)
+	_player_parent.add_child(game_settings_player)
 
 	game_settings_player.set_player(player)
 
 func _set_time_limit(new: String) -> void:
+	if not new.is_valid_int():
+		_time_limit.text = _time_limit_buffer
+		return
+	_time_limit_buffer = new
 	Global.time_limit = new.to_int()
-	time_limit_set = true
+	_time_limit_set = true
 
 func _set_imposter_count(new: String) -> void:
+	if not new.is_valid_int():
+		_imposter_count.text = _imposter_count_buffer
+		return
+	_imposter_count_buffer = new
 	imposter_count = new.to_int()
-	imposter_count_set = true
+	_imposter_count_set = true
 
 func _set_imposter_hint(new: bool) -> void:
 	Global.imposter_hint = new
-	imposter_hint_set = true
+	_imposter_hint_set = true
 
 func _ready() -> void:
 	for player: Player in Global.players:

@@ -122,7 +122,8 @@ layout_mode = 2
 layout_mode = 2
 text = "Zeitbegrenzung (min)"
 
-[node name="LineEdit" parent="MarginContainer/GameSettings/MarginContainer/VBoxContainer/TimeLimit" instance=ExtResource("3_rtw2f")]
+[node name="TimeLimit" parent="MarginContainer/GameSettings/MarginContainer/VBoxContainer/TimeLimit" instance=ExtResource("3_rtw2f")]
+unique_name_in_owner = true
 layout_mode = 2
 virtual_keyboard_type = 2
 
@@ -133,8 +134,10 @@ layout_mode = 2
 layout_mode = 2
 text = "Imposter-Zahl"
 
-[node name="LineEdit" parent="MarginContainer/GameSettings/MarginContainer/VBoxContainer/ImposterCount" instance=ExtResource("3_rtw2f")]
+[node name="ImposterCount" parent="MarginContainer/GameSettings/MarginContainer/VBoxContainer/ImposterCount" instance=ExtResource("3_rtw2f")]
+unique_name_in_owner = true
 layout_mode = 2
+virtual_keyboard_type = 2
 
 [node name="Hint" type="HBoxContainer" parent="MarginContainer/GameSettings/MarginContainer/VBoxContainer"]
 layout_mode = 2
@@ -153,7 +156,7 @@ text = "Start"
 
 [connection signal="pressed" from="MarginContainer/Home/VBoxContainer/AspectRatioContainer/Play" to="." method="play"]
 [connection signal="pressed" from="MarginContainer/GameSettings/MarginContainer/VBoxContainer/Players/MarginContainer/VBoxContainer/AddPlayer" to="." method="add_player"]
-[connection signal="text_changed" from="MarginContainer/GameSettings/MarginContainer/VBoxContainer/TimeLimit/LineEdit" to="." method="_set_time_limit"]
-[connection signal="text_changed" from="MarginContainer/GameSettings/MarginContainer/VBoxContainer/ImposterCount/LineEdit" to="." method="_set_imposter_count"]
+[connection signal="text_changed" from="MarginContainer/GameSettings/MarginContainer/VBoxContainer/TimeLimit/TimeLimit" to="." method="_set_time_limit"]
+[connection signal="text_changed" from="MarginContainer/GameSettings/MarginContainer/VBoxContainer/ImposterCount/ImposterCount" to="." method="_set_imposter_count"]
 [connection signal="toggled" from="MarginContainer/GameSettings/MarginContainer/VBoxContainer/Hint/CenterContainer" to="." method="_set_imposter_hint"]
 [connection signal="pressed" from="MarginContainer/GameSettings/MarginContainer/VBoxContainer/Start" to="." method="_start"]
