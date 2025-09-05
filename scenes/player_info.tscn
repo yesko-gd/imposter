@@ -63,8 +63,10 @@ text = "This is a bug :/"
 horizontal_alignment = 1
 
 [node name="Reveal" type="Button" parent="MarginContainer/Content"]
+unique_name_in_owner = true
 layout_mode = 2
 theme_override_font_sizes/font_size = 24
+action_mode = 0
 text = "Aufdecken"
 
 [node name="Spacer" type="Control" parent="MarginContainer/Content"]
