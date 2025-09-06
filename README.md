@@ -4,7 +4,7 @@ Ein Imposter-Spiel, stark inspiriert vom Spiel "Finde den Imposter" bei **Splash
 
 ## Regeln:
 
-**Disclaimer: Ich verwende der Einfachheit das generische Maskulinum; jedes männliche Pronomen/Nomen umfasst *alle* Geschlechter.**
+**Ich verwende der Einfachheit das generische Maskulinum; jedes männliche Pronomen/Nomen umfasst *alle* Geschlechter.**
 
 ### Ziel
 
@@ -12,7 +12,8 @@ Es gibt **Unschuldige** und **Imposter**; diese Rollen werden zufällig aufgetei
 
 ### Ablauf
 
-Sobald der Timer losgeht, sagen alle Spieler (auch die Imposter) reihum jeweils ein Wort, das zum Lösungswort passt. Für alle Unschuldigen gilt: kein Teil des gesagten Wortes darf in der gleichen Wortfamilie sein wie ein Teil des Lösungswortes, oder eine Übersetzung davon sein. Beispiele mit dem Lösungswort "Industriezucker":
+Sobald der Timer losgeht, sagen alle Spieler (auch die Imposter) reihum jeweils ein Wort, das zum Lösungswort passt. Für alle Unschuldigen gilt:
+1. kein Teil des gesagten Wortes darf in der gleichen Wortfamilie sein wie ein Teil des Lösungswortes, oder eine Übersetzung davon sein. Beispiele mit dem Lösungswort "Industriezucker":
 
 ```
 ✔ süß
@@ -21,12 +22,16 @@ Sobald der Timer losgeht, sagen alle Spieler (auch die Imposter) reihum jeweils 
 ✕ Industrialisierung
 ```
 
+2. Außerdem darf kein bereits gesagtes Wort verwendet werden.
+
+Wird Regel (2) gebrochen, muss der Spieler ein weiteres Wort sagen. Für Regel (1) siehe **Spielende**.
+
 ### Spielende
 
 Die Spieler können sich jederzeit darauf einigen, abzustimmen, wer der Imposter ist. Dann wird der Timer für die Dauer der Abstimmung pausiert. Der Spieler, für den gestimmt wird, scheidet aus dem Spiel aus.
 Wenn der Timer abgelaufen ist, müssen die Spieler abstimmen.
 
-**Wenn ein Spieler, unabhängig von seiner Rolle, in seinem Zug ein Wort sagt, das nach den soeben genannten Regeln nicht erlaubt ist, ist das Spiel beendet und die Imposter haben gewonnen**.
+**Wenn ein Spieler, unabhängig von seiner Rolle, in seinem Zug ein Wort sagt, das nach der oben genannten Regel (1) nicht erlaubt ist, ist das Spiel beendet und die Imposter haben gewonnen.**
 
 **Sobald keine Imposter mehr im Spiel sind, haben die Unschuldigen gewonnen. Sobald nur noch Imposter im Spiel sind, haben die Imposter gewonnen.**
 
