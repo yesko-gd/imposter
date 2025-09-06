@@ -4,7 +4,7 @@ Ein Imposter-Spiel, stark inspiriert vom Spiel "Finde den Imposter" bei **Splash
 
 ## Regeln:
 
-**Ich verwende der Einfachkeit halber das generische Maskulinum; jedes männliche Pronomen/Nomen umfasst *alle* Geschlechter.**
+**Ich verwende der Einfachheit halber das generische Maskulinum; jedes männliche Pronomen/Nomen umfasst *alle* Geschlechter.**
 
 ### Ziel
 
@@ -14,7 +14,7 @@ Es gibt **Unschuldige** und **Imposter**; diese Rollen werden zufällig aufgetei
 
 Sobald der Timer losgeht, beginnt das Spiel mit dem angezeigten Startspieler.
 Wer am Zug ist, sagt jeweils ein Wort welches zum Lösungswort passt. Dabei darf kein Teil des gesagten Wortes in der gleichen Wortfamilie sein wie ein Teil des Lösungswortes oder bereits gesagten Wortes, oder eine Übersetzung davon sein.
-Außerdem dürfen keine erfundenen Wörter gesagt werden. (Wörter, die nicht in weit verbreiteten Wörterbüchern stehen, es sollte sich vorher auf eines geeinigt werden.)
+Außerdem dürfen keine erfundenen Wörter gesagt werden.
 Beispiele mit dem Lösungswort "Industriezucker":
 
 ```
